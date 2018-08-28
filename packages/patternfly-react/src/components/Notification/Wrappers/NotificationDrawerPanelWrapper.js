@@ -46,7 +46,7 @@ const NotificationDrawerPanelWrapper = ({
       seen={notification.seen}
       onClick={() => notificationClickHandler(panelkey, notification.id, notification.seen)}
     >
-      {Object.keys(notification.actions).length > 0 && (
+      {notification.actions && Object.keys(notification.actions).length > 0 && (
         <NotificationDrawer.Dropdown pullRight id={i}>
           {notification.actions.links.map((link, j) => (
             <MenuItem key={j} id={`notification-kebab-${j}`} onClick={() => onClickedLink(link)}>
